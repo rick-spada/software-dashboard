@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SoftwareDashboard</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class='<%= controller.controller_name %>'>
+ 		<div id="banner">
+			<h1>
+        <a href="/">
+				  <%= @page_title || "Software Dashboard" %>
+        </a>
+			</h1>
+		</div>
+
+		<div id="columns">
+			<nav id=navigation>
+				<ul>
+					<li><a href="" id="SoundCheckInstallers">SoundCheck Installers</a></li>
+					<li><a href="/jenkins/index" id="Jenkins">Jenkins</a></li>
+					<li>
+						<a href="https://listeninc.atlassian.net" target="_blank">Jira</a>
+						<ul>
+							<li><a href="https://listeninc.atlassian.net/secure/RapidBoard.jspa?rapidView=14" target=_blank>Active Sprint</a></li>
+							<li><a href="https://listeninc.atlassian.net/secure/RapidBoard.jspa?rapidView=14&projectKey=SC&view=planning.nodetail&issueLimit=-1" target=_blank>Backlog</a></li>
+							<li><a href="https://listeninc.atlassian.net/projects/SC/versions/11450/tab/release-report-done" target=_blank>SoundCheck 18.1 Release</a></li>
+							<li><a href="https://listeninc.atlassian.net/secure/RapidBoard.jspa?projectKey=SC&rapidView=11" target=_blank>Triage</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Performance Reports</a></li>
+				</ul>
+			</nav>
+			<div id="main">
+				<%= yield %>
+			</div>
+  </body>
+</html>

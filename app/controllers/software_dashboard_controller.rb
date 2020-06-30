@@ -1,0 +1,2 @@
+class SoftwareDashboardController < ApplicationController
+end
